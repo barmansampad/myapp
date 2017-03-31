@@ -29,4 +29,8 @@
     "url": "*YOUR GITHUB URL*/issues"
   },
   "homepage": "*YOUR GITHUB URL*#readme"
+},
+"engines": {
+ "node":"6.9.5",
+  "npm": "3.10.10"
 }
