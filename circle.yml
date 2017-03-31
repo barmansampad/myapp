@@ -1,20 +1,5 @@
-machine:
-  services:
-    - docker
-
-dependencies:
-  override:
-    - docker info
-    - docker build --rm=false -t circleci/elasticsearch .
-
-test:
-  override:
-    - docker run -d -p 3000:3000 circleci/elasticsearch; sleep 10
-    - curl --retry 10 --retry-delay 5 -v http://localhost:3000
-
-deployment:
-  hub:
+	   deployment:
+  staging:
     branch: master
-    commands:
-      - docker login -e sampad.barman@cognizant.com -u barmansampad -p password-1
-      - docker push circleci/elasticsearch
+    heroku:
+      appname: myappmock
